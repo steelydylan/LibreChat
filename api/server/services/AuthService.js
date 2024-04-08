@@ -72,6 +72,9 @@ const logoutUser = async (userId, refreshToken) => {
  * @returns
  */
 const registerUser = async (user) => {
+  // ユーザー登録させない
+  return { status: 403, message: 'ユーザー登録はさせません。' };
+
   const { error } = registerSchema.safeParse(user);
   if (error) {
     const errorMessage = errorsToString(error.errors);
