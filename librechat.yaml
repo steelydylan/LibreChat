@@ -62,7 +62,7 @@ endpoints:
         default: ["command-r-plus"]
         fetch: false
       modelDisplayLabel: "cohere"
-      titleModel: "command"
+      titleModel: "command-r-plus"
       dropParams: ["stop", "user", "frequency_penalty", "presence_penalty", "temperature", "top_p"]
     # - name: "Mistral"
     #   apiKey: "${MISTRAL_API_KEY}"
