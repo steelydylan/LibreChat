@@ -36,9 +36,9 @@ rateLimits:
     userWindowInMinutes: 60
 registration:
   socialLogins: ["google", "facebook", "github", "discord", "openid"]
-  allowedDomains:
-    - "example.com"
-    - "anotherdomain.com"
+  # allowedDomains:
+  #   - "example.com"
+  #   - "anotherdomain.com"
 endpoints:
   assistants:
     # Disable Assistants Builder Interface by setting to `true`
@@ -55,6 +55,15 @@ endpoints:
     # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
     # capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
   custom:
+    - name: 'groq'
+      apiKey: '${GROQ_API_KEY}'
+      baseURL: 'https://api.groq.com/openai/v1/'
+      models:
+        default: ['llama2-70b-4096', 'mixtral-8x7b-32768', 'gemma-7b-it']
+        fetch: false
+      titleConvo: true
+      titleModel: 'mixtral-8x7b-32768'
+      modelDisplayLabel: 'groq'
     - name: "cohere"
       apiKey: "${COHERE_API_KEY}"
       baseURL: "https://api.cohere.ai/v1"
