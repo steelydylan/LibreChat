@@ -3,7 +3,8 @@
  * FIXME: Basic認証導入するまでの仮実装
  */
 function isMyUser(email) {
-  return email === process.env.MY_USER;
+  return true;
+  // return email === process.env.MY_USER;
 }
 
 /**

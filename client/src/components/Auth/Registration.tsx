@@ -27,7 +27,7 @@ const Registration: React.FC = () => {
 
   const onRegisterUserFormSubmit = async (data: TRegisterUser) => {
     // 自分以外登録させない
-    alert('ユーザー登録はさせません。');
+    // alert('ユーザー登録はさせません。');
     try {
       await registerUser.mutateAsync(data);
       navigate('/c/new');
