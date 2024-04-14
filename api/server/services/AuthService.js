@@ -8,6 +8,7 @@ const { sendEmail } = require('~/server/utils');
 const Session = require('~/models/Session');
 const { logger } = require('~/config');
 const User = require('~/models/User');
+const { isMyUser } = require('server/utils/user');
 
 const domains = {
   client: process.env.DOMAIN_CLIENT,
@@ -73,7 +74,9 @@ const logoutUser = async (userId, refreshToken) => {
  */
 const registerUser = async (user) => {
   // ユーザー登録させない
-  return { status: 403, message: 'ユーザー登録はさせません。' };
+  if (!isMyUser(user.email)) {
+    return { status: 403, message: 'ユーザー登録はさせません。' };
+  }
 
   const { error } = registerSchema.safeParse(user);
   if (error) {
