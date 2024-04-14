@@ -8,7 +8,7 @@ const { sendEmail } = require('~/server/utils');
 const Session = require('~/models/Session');
 const { logger } = require('~/config');
 const User = require('~/models/User');
-const { isMyUser } = require('server/utils/user');
+const { isMyUser } = require('~/server/utils/user');
 
 const domains = {
   client: process.env.DOMAIN_CLIENT,
